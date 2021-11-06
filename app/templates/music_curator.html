@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html  >
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="{{url_for("static", filename="images/background7.jpg")}}" type="image/x-icon">
+ 
+  
+  <title>MC</title>
+  <link rel="stylesheet" href="{{url_for("static", filename="web/assets/mobirise-icons2/mobirise2.css")}}">
+  <link rel="stylesheet" href="{{url_for("static", filename="bootstrap/css/bootstrap.min.css")}}">
+  <link rel="stylesheet" href="{{url_for("static", filename="bootstrap/css/bootstrap-grid.min.css")}}">
+  <link rel="stylesheet" href="{{url_for("static", filename="bootstrap/css/bootstrap-reboot.min.css")}}">
+  <link rel="stylesheet" href="{{url_for("static", filename="dropdown/css/style.css")}}">
+  <link rel="stylesheet" href="{{url_for("static", filename="socicon/css/styles.css")}}">
+  <link rel="stylesheet" href="{{url_for("static", filename="theme/css/style.css")}}">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
+  <link rel="preload" as="style" href="{{url_for("static", filename="mobirise/css/mbr-additional.css")}}"><link rel="stylesheet" href="{{url_for("static", filename="mobirise/css/mbr-additional.css")}}" type="text/css">
+  
+  
+  
+  
+</head>
+<body>
+  
+  <section data-bs-version="5.1" class="menu cid-s48OLK6784" once="menu" id="menu1-l">
+    
+    <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
+        <div class="container">
+            <div class="navbar-brand">
+                <span class="navbar-logo">
+                    <a href="Seven7UpcomingupProductions">
+                        <img src="{{url_for("static", filename="images/background7.jpg")}}" alt="Mobirise" style="height: 3.8rem;">
+                    </a>
+                </span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-black display-7" href="congrats">Seven 7Up coming up Productions</a></span>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item"><a class="nav-link link text-black display-4" href="{{session['profile_url']}}"><img src="{{session['user_image']}}" alt="Mobirise" style="height: 40px; width:  40px;border-radius: 50%;"></span>{{session['user_name']}}</a></li></ul>
+                
+                
+            </div>
+        </div>
+    </nav>
+
+</section>
+
+<section data-bs-version="5.1" class="content4 cid-sLseJJdEeq" id="content4-10">
+    
+    
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="title col-md-12 col-lg-10">
+                <h3 class="mbr-section-title mbr-fonts-style align-center mb-4 display-2">
+                    <strong><br>Music Curator</strong>
+                </h3>
+                <h4 class="mbr-section-subtitle align-center mbr-fonts-style mb-4 display-5">
+                    Here you can generate personalized playlists. PLay around
+                </h4>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="form8 cid-sLsfvLpkUU" id="form8-13">
+    
+    
+    <div class="container">
+        <div class="mbr-section-head">
+            <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-6">
+                Give me some inputs for your suggested playlists
+            </h3>
+            <br>
+        </div>
+        <div class="container" style="text-align:center">
+            <form class="row row-cols-lg-auto g-3 align-items-center" action="#" method="post">
+              <div class="col-12" style="text-align:center">
+                <label for="customRange3" class="form-label">How much new music do you want in your playlist? </label><br>
+                <span class="font-weight-bold indigo-text mr-2 mt-1">0&percnt;</span>
+                  <input class="border-0" type="range" min="0" max="100"
+                  onChange="document.getElementById('rangeval').textContent = String(document.getElementById('customRange3').value+'%')" id="customRange3" name="slider" value="{{new_songs_percent}}}"/>
+                <span class="font-weight-bold indigo-text ml-2 mt-1">100&percnt;</span>
+                <br>
+                <span id="rangeval">50&percnt;<!-- Default value --></span>
+              </div>
+
+              <div class="col-12">
+                <label class="form-label" for="inlineFormSelectPref">How many songs per playlist do you want?</label>
+                <select class="form-select" id="inlineFormSelectPref" name="tenda">
+                 <option selected>{{playlists_dimension}}</option>
+                 <option value="1">1</option>
+                 <option value="2">2</option>
+                 <option value="3">3</option>
+                 <option value="4">4</option>
+                 <option value="5">5</option>
+                 <option value="6">6</option>
+                 <option value="7">7</option>
+                 <option value="8">8</option>
+                 <option value="9">9</option>
+                 <option value="10">10</option>
+                 <option value="11">11</option>
+                 <option value="12">12</option>
+                 <option value="13">13</option>
+                 <option value="14">14</option>
+                 <option value="15">15</option>
+                 <option value="16">16</option>
+                 <option value="17">17</option>
+                 <option value="18">18</option>
+                 <option value="19">19</option>
+                 <option value="20">20</option>
+                 <option value="21">21</option>
+                 <option value="22">22</option>
+                 <option value="23">23</option>
+                 <option value="24">24</option>
+                 <option value="25">25</option>
+                 <option value="26">26</option>
+                 <option value="27">27</option>
+                 <option value="28">28</option>
+                 <option value="29">29</option>
+                 <option value="30">30</option>
+                 <option value="31">31</option>
+                 <option value="32">32</option>
+                 <option value="33">33</option>
+                 <option value="34">34</option>
+                 <option value="35">35</option>
+                 <option value="36">36</option>
+                 <option value="37">37</option>
+                 <option value="38">38</option>
+                 <option value="39">39</option>
+                 <option value="40">40</option>
+                 <option value="41">41</option>
+                 <option value="42">42</option>
+                 <option value="43">43</option>
+                 <option value="44">44</option>
+                 <option value="45">45</option>
+                 <option value="46">46</option>
+                 <option value="47">47</option>
+                 <option value="48">48</option>
+                 <option value="49">49</option>
+                 <option value="50">50</option>
+                </select>
+              </div>
+
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary">Generate playlists</button>
+              </div>
+            </form>
+        </div>
+    </div>
+</section>
+<br>
+<br>
+{%if playlists%}
+<section data-bs-version="5.1" class="pricing2 cid-sLsfeSw65V" id="pricing2-11">
+    
+
+    {%set n_rows = playlists|rows %}
+    {%set resto  = playlists|modulo %}
+    {%for k in range(n_rows)%}
+        {% if k == n_rows -1 %}
+            {% if resto == 0 %}
+                {% set pl_in_row = 3 %}
+            {% else %}
+                {% set pl_in_row = resto %}
+            {% endif %}
+        {% else %}
+            {% set pl_in_row = 3 %}
+        {% endif %}
+    <div class="container">
+        <div class="row justify-content-center">
+            {%for i in range(3*k, 3*k + pl_in_row)%}
+            <div class="col-12 col-md-6 align-center col-lg-4">
+                <div class="plan">
+                    <form action="{{url_for('import_playlist')}}" method="POST">
+                        <div class="plan-header">
+                            <h6 class="plan-title mbr-fonts-style mb-3 display-5">
+                                <input type="text" name="pl_name" value="Playlist_{{i}}"}}>
+                            </h6>
+                            <div class="plan-price">
+                                <input type="text" name="pl_description" value="{{playlists[i]['pl_name']}}" class="price mbr-fonts-style m-0 display-6">
+                            </div>
+                        </div>
+                        <div class="plan-body">
+                            <div class="plan-list mb-4">
+                                <ul class="list-group mbr-fonts-style list-group-flush display-7">
+                                    {%for j in range(playlists[i]["items"]|length)%}
+                                    <li class="list-group-item"><input type="checkbox" name="check" checked="true" value="{{playlists[i]['items'][j]}}">{{playlists[i]["items"][j]["name"]}}</li>
+                                    <p>{{playlists[i]["items"][j]["artist"]}}</p>
+                                    {%endfor%}
+                                </ul>
+                            </div>
+                            <div class="mbr-section-btn text-center">
+                                <input type="submit" name="import" value="Import this to Spotify" class="btn btn-primary display-4" formtarget="_blank">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            {%endfor%}          
+            
+        </div>
+    </div>
+    <br>
+    {% endfor %}
+</section>
+{%endif%}
+<br>
+<br>
+
+<section data-bs-version="5.1" class="footer3 cid-s48P1Icc8J" once="footers" id="footer3-z">
+
+    
+
+    
+
+    <div class="container">
+        <div class="media-container-row align-center mbr-white">
+            <div class="row row-links">
+                <ul class="foot-menu">
+                    
+                    
+                    
+                    
+                    
+                <li class="foot-menu-item mbr-fonts-style display-7"><a href="https://genius.com/" class="text-primary">Genius.com</a></li><li class="foot-menu-item mbr-fonts-style display-7"><a href="https://www.last.fm/" class="text-primary">Last.fm</a></li><li class="foot-menu-item mbr-fonts-style display-7"><a href="https://www.spotify.com/" class="text-primary">Spotify.com</a></li></ul>
+            </div>
+            <div class="row social-row">
+                <div class="social-list align-right pb-2">
+                    
+                    
+                    
+
+            <div class="row row-copirayt">
+                <p class="mbr-text mb-0 mbr-fonts-style mbr-white align-center display-7">
+                    © Copyright Seven 7Up coming up Productions. All Rights Reserved.
+                </p>
+            </div>
+        </div>
+    </div>
+</section><section style="background-color: #fff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif; color:#aaa; font-size:12px; padding: 0; align-items: center; display: flex;"><a href="https://mobirise.site/b" style="flex: 1 1; height: 3rem; padding-left: 1rem;"></a><p style="flex: 0 0 auto; margin:0; padding-right:1rem;"></section><script src="{{url_for("static", filename="bootstrap/js/bootstrap.bundle.min.js")}}"></script>  <script src="{{url_for("static", filename="smoothscroll/smooth-scroll.js")}}"></script>  <script src="{{url_for("static", filename="ytplayer/index.js")}}"></script>  <script src="{{url_for("static", filename="dropdown/js/navbar-dropdown.js")}}"></script>  <script src="{{url_for("static", filename="theme/js/script.js")}}"></script>  <script src="{{url_for("static", filename="formoid/formoid.min.js")}}"></script>  
+  
+  <script src="{{ url_for('static', filename='jquery.js') }}"></script>
+  <script>
+  $SCRIPT_ROOT = {{ request.script_root|tojson }};
+</script>
+  
+</body>
+</html>
