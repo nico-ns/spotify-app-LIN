@@ -40,8 +40,8 @@ SPOTIFY_API_URL = "{}/{}".format(SPOTIFY_API_BASE_URL, API_VERSION)
 
 # Server-side Parameters
 CLIENT_SIDE_URL = "http://192.168.1.147:5056/"
-REDIRECT_URI = "http://192.168.1.147:5056/main_page"
-SCOPE = 'user-read-private user-read-playback-state user-modify-playback-state user-library-read playlist-modify-public playlist-modify-private playlist-read-collaborative playlist-read-private'
+REDIRECT_URI = "http://spotapp.hopto.org:5056/main_page"
+SCOPE = 'user-read-private user-read-email user-read-playback-state user-modify-playback-state user-library-read playlist-modify-public playlist-modify-private playlist-read-collaborative playlist-read-private'
 STATE = ""
 SHOW_DIALOG_bool = True
 SHOW_DIALOG_str = str(SHOW_DIALOG_bool).lower()
@@ -110,6 +110,7 @@ def main_page():
         # Get profile data
         user_profile_api_endpoint = "{}/me".format(SPOTIFY_API_URL)
         profile_response = requests.get(user_profile_api_endpoint, headers=authorization_header)
+        print(profile_response)
         profile_data = json.loads(profile_response.text)
         user_id = profile_data["id"]
         user_name = profile_data["display_name"] 
@@ -117,7 +118,10 @@ def main_page():
         session["user"] = user_id
         session["user_name"] = user_name
         session["profile_url"] = profile_data["external_urls"]["spotify"]
-        session["user_image"] = profile_data["images"][0]["url"]
+        try:
+            session["user_image"] = profile_data["images"][0]["url"]
+        except:
+            pass
         session["expiration"] = expires_in
         session["start"] = timeit.default_timer()
 
