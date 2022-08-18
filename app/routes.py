@@ -28,8 +28,8 @@ import urllib
 from urllib.parse import quote 
 
 #  Client Keys
-CLIENT_ID = "14339491eaf34e73b5a752fefda67411"
-CLIENT_SECRET = "937181eb8e6c4c8398f7525bd492914a"
+CLIENT_ID = os.environ["client_id"]
+CLIENT_SECRET = os.environ["client_secret"]
 
 # Spotify URLS
 SPOTIFY_AUTH_URL = "https://accounts.spotify.com/authorize"
@@ -39,9 +39,9 @@ API_VERSION = "v1"
 SPOTIFY_API_URL = "{}/{}".format(SPOTIFY_API_BASE_URL, API_VERSION)
 
 # Server-side Parameters
-CLIENT_SIDE_URL = "http://192.168.1.147:5056/"
-REDIRECT_URI = "http://spotapp.hopto.org:5056/main_page"
-SCOPE = 'user-read-private user-read-email user-read-playback-state user-modify-playback-state user-library-read playlist-modify-public playlist-modify-private playlist-read-collaborative playlist-read-private'
+CLIENT_SIDE_URL = os.environ["client_url"]
+REDIRECT_URI = os.environ["redirect_url"]
+SCOPE = os.environ["scopes"]
 STATE = ""
 SHOW_DIALOG_bool = True
 SHOW_DIALOG_str = str(SHOW_DIALOG_bool).lower()
@@ -53,9 +53,7 @@ auth_query_parameters = {
     "client_id": CLIENT_ID
 }
 
-# log_path = "/home/nicns/Desktop/fl/dir.log"
-# with open(log_path, "w") as file:
-#     file.write(os.getcwd())
+
 os.chdir("/var/www/webApp")
 # with open(log_path, "a") as file:
 #     file.write(os.getcwd())
